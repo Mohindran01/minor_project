@@ -19,7 +19,7 @@ from pathlib import Path
 
 app = Flask(__name__)
 CORS(app,resources={r'*':{'origin':'*'}})
-port = int(os.environ.get('PORT', 5000))
+
 app.config['DEBUG'] = True
 app.config['TESTING'] = False
 app.config['MAIL_SERVER']='smtp.gmail.com'
@@ -271,4 +271,5 @@ def analyze_data():
         return "test"
 
 if __name__=='__main__':
+    port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
